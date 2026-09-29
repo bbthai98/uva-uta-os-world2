@@ -157,7 +157,7 @@ void schedule() {
             procdump(); 
             #endif
             /* if cpu already on idle task, this will do nothing */
-switch_to(idle_tasks[cpu]);
+            switch_to(idle_tasks[cpu]);
             break;
         }
 	}

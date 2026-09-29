@@ -32,10 +32,10 @@ void kernel_main() {
 	sys_timer_init(); 		// kernel timer: delay, timekeeping...
 	enable_interrupt_controller(0/*coreid*/);
 	/* turn on cpu irq  */
-	/* STUDENT: TODO: your code here */
+	enable_irq();
 	
 	/* sched ticks alive. preemptive scheduler is on */
-	/* STUDENT: TODO: your code here */
+	generic_timer_init();
 	
 	/* now cpu is on its boot stack (boot.S) belonging to the idle task. 
 	schedule() will jump off to kernel stacks belonging to normal tasks
