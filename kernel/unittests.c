@@ -324,6 +324,9 @@ void test_kern_tasks_donut(void) {
         res = copy_process(PF_KTHREAD, (unsigned long)&kern_task_donut,
             (unsigned long)i, name);
         BUG_ON(res<0);
+        int priorities[] = {1, 3, 6, 9, 12, 12, 9, 6, 3};
+        task[res]->priority = priorities[i];
+        task[res]->credits = task[res]->priority;
     }
 
 	// current we are on the "init" task. 
