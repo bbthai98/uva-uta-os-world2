@@ -28,7 +28,7 @@
 /* sched interval, for arm generic timer. 
 when on qemu, arm generic timer is at 1MHz by default
 on rpi3, it's also 1MHz. */
-int interval = 1000000;
+int interval = 5000000;
 
 ////////////////////////////////////////////////////////////////////////////////
 
