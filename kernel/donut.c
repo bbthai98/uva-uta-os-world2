@@ -25,9 +25,18 @@ static inline void setpixel(unsigned char *buf, int x, int y, int pit, PIXEL p) 
     *(PIXEL *)(buf + y * pit + x * PIXELSIZE) = p;
 }
 
-// canvas layout, 2x2
-static const int xoff[] = {0,NN/2,0,NN/2};
-static const int yoff[] = {0,0,NN/2,NN/2};
+// canvas layout, 3x3
+static const int xoff[] = {
+    0, NN/3, 2*NN/3,
+    0, NN/3, 2*NN/3,
+    0, NN/3, 2*NN/3
+};
+
+static const int yoff[] = {
+    0, 0, 0,
+    NN/3, NN/3, NN/3,
+    2*NN/3, 2*NN/3, 2*NN/3
+};
 _Static_assert(N_DONUTS <= NELEM(xoff));
 
 enum {K=4}; // donut scale factor, see code below
